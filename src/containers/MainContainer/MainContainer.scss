@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.top{
+ //   padding-top: 66.64%;
+    color: white;
+}
+.main{
+    background-image: url(../../../public/images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: hsl(235, 21%, 11%);
+    width: 100vw;
+    height: 100vh;
+    color:white;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.heading{
+    padding-top:10%;
+    font-size: 40px;
+}

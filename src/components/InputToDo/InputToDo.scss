@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+input{
+    background-color: hsl(235, 24%, 19%);
+    color:hsl(233, 14%, 35%);
+    font-size:  18px;
+    font-weight: 400;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    width: 35vw;
+    padding:25px;
+    border-radius: 7px;
+}
+input:focus{
+    outline: none;
+}
