@@ -1,22 +1,30 @@
 import { useState } from "react";
 import "./InputToDo.scss";
+import axios from 'axios';
+
 const InputToDo=()=>{
     const [inputValue,setInputValue] = useState('');
-    const handleChange = (event)=>{
+    const [isActive, setIsChecked] = useState(true);
+
+    const handleChange = async (event)=>{
         if(event.key === "Enter")
         {    
             setInputValue(event.target.value);
+            console.log(isActive)
             const newdata = {
                 "description":inputValue,
-                "isDone":"false"
+                "isActive":isActive
             }
-            fetch("http://localhost:8080/addtodo", {
+            console.log(JSON.stringify(newdata)+ "  Stringiffy");
+           fetch("http://localhost:8080/addtodo", {
                         method: 'POST',
                         headers: { "Content-type": "application/json" },
                         body: JSON.stringify(newdata)
                     }).then(() => {
                         console.log("New toDo added");
                     });
+                 //   await axios.post('http://localhost:8080/addtodo', newdata);
+
             console.log(inputValue);
         }
     };
