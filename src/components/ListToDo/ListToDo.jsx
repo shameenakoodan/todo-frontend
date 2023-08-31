@@ -4,7 +4,13 @@ import { useState, useEffect } from "react";
 const ListToDo = () => {
   const checkList = ["Eat", "Drink", "Sleep", "Read"];
   const [todoList, setInputList] = useState([]);
-  useEffect(() => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (index) => {
+    const updatedList = [...todoList];
+    updatedList[index].isActive = !updatedList[index].isActive;
+    setInputList(updatedList);
+  };  useEffect(() => {
     fetch("http://localhost:8080/todos")
       .then((res) => {
         return res.json();
@@ -25,8 +31,9 @@ const ListToDo = () => {
               type="checkbox"
               className="left-box"
               checked={todo.isActive}
+              onChange={() => handleCheckboxChange(index)}
             />
-            <span className="right-box">{todo.description}</span>
+            <span className={todo.isActive?'strike-through':"right-box"}>{todo.description}</span>
           </div>
         ))}
       </div>

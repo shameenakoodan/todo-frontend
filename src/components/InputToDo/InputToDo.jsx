@@ -1,10 +1,9 @@
 import { useState } from "react";
 import "./InputToDo.scss";
-import axios from 'axios';
 
 const InputToDo=()=>{
     const [inputValue,setInputValue] = useState('');
-    const [isActive, setIsChecked] = useState(true);
+    const [isActive, setIsChecked] = useState(false);
 
     const handleChange = async (event)=>{
         if(event.key === "Enter")
@@ -13,7 +12,7 @@ const InputToDo=()=>{
             console.log(isActive)
             const newdata = {
                 "description":inputValue,
-                "isActive":isActive
+                "isActive":false
             }
             console.log(JSON.stringify(newdata)+ "  Stringiffy");
            fetch("http://localhost:8080/addtodo", {

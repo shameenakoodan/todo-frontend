@@ -32,4 +32,7 @@ input[type=checkbox]{
   input[type=checkbox ]:checked  {
     accent-color: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   }
+  .strike-through {
+    text-decoration: line-through;
+  }
   
