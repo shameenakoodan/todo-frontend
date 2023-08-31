@@ -2,7 +2,8 @@
     background-color: hsl(235, 24%, 19%);
     display: flex;
     flex-direction: row;
-    color:hsl(233, 14%, 35%);
+    //color:hsl(233, 14%, 35%);
+    color: white;
     font-size:  18px;
     text-align: left;
     width: 35vw;
@@ -22,17 +23,28 @@
     padding-top: 10px;
 }
 input[type=checkbox]{
-    width: 30px;
-    height: 30px;
-    clip-path: circle(46% at 50% 50%);
+  -webkit-appearance: none;
+    clip-path: circle(35% at 45% 36%);
     background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
+  /* Styles for the label when the checkbox is checked */
+input[type=checkbox]:checked{
+  font-weight: bold;
+  color: green;
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-image: url(../../../public/icons/Check.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 30px; /* Add space for the background image */
+}
 
-  
-  input[type=checkbox ]:checked  {
-    accent-color: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  }
+/* Styles for the checkbox itself when checked */
+input[type=checkbox]:checked {
+  border-color: green;
+}
+
   .strike-through {
     text-decoration: line-through;
+    flex: 2 1;
+    padding-top: 10px;
   }
-  

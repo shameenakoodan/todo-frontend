@@ -6,11 +6,27 @@ const ListToDo = () => {
   const [todoList, setInputList] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleCheckboxChange = (index) => {
+  const handleCheckboxChange = (index,id) => {
     const updatedList = [...todoList];
     updatedList[index].isActive = !updatedList[index].isActive;
     setInputList(updatedList);
-  };  useEffect(() => {
+    console.log("Wonder" + typeof updatedList[index].id);
+    const num = updatedList[index].id;
+    console.log("Wonder" + typeof num);
+
+    try {
+      fetch('http://localhost:8080/'+num, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ isActive: updatedList[index].isActive }),
+      });
+    } catch (error) {
+      console.error("Error updating status:", error);
+    }
+  };  
+  useEffect(() => {
     fetch("http://localhost:8080/todos")
       .then((res) => {
         return res.json();
@@ -31,7 +47,7 @@ const ListToDo = () => {
               type="checkbox"
               className="left-box"
               checked={todo.isActive}
-              onChange={() => handleCheckboxChange(index)}
+              onChange={() => handleCheckboxChange(index,todo.id)}
             />
             <span className={todo.isActive?'strike-through':"right-box"}>{todo.description}</span>
           </div>
