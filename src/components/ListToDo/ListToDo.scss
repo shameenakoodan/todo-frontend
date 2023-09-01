@@ -48,3 +48,15 @@ input[type=checkbox]:checked {
     flex: 2 1;
     padding-top: 10px;
   }
+.delete-button{
+  background: url(../../../public/icons/Cross.png);
+  width: 40px;
+  background-repeat: no-repeat;
+  border:none;
+ // display: none;
+
+}
+.delete-button:hover{
+  color: red;
+  background: url(../../../public/icons/cross-hover.png);
+}

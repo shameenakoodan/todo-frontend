@@ -9,7 +9,6 @@ const InputToDo=()=>{
         if(event.key === "Enter")
         {    
             setInputValue(event.target.value);
-            console.log(isActive)
             const newdata = {
                 "description":inputValue,
                 "isActive":false
