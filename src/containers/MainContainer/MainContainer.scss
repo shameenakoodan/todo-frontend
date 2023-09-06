@@ -6,10 +6,12 @@
     color: white;
 }
 .main{
-    background-image: url(../../../public/images/bg-desktop-dark.jpg);
+   // background-image: url(../../../public/images/bg-desktop-dark.jpg);
+ background-image: url(../../../public/images/bg-desktop-light.jpg);
+
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: hsl(235, 21%, 11%);
+  //  background-color: hsl(235, 21%, 11%);
     width: 100vw;
     height: 100vh;
     color:white;
