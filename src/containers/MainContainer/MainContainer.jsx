@@ -14,6 +14,7 @@ const MainContainer = () => {
         "description": inputValue,
         "isActive": false
       }
+      setInputValue("");
       console.log(JSON.stringify(newdata) + "  Stringiffy");
       fetch("http://localhost:8080/addtodo", {
         method: 'POST',
@@ -49,7 +50,6 @@ const MainContainer = () => {
     updatedList[index].isActive = !updatedList[index].isActive;
     setInputList(updatedList);
     const num = updatedList[index].id;
-
     try {
       fetch("http://localhost:8080/" + num, {
         method: "PUT",
