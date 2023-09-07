@@ -1,4 +1,24 @@
 .footer{
     color: lightblue;
     font-size: 18px;
+    height: 7vh;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; 
+    margin: 0 auto;
+    width: 39vw;
+    border: 2px gray;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top:10px;
 }
+.footer-buttons{
+    border:none;
+    background: none;
+    color:gray;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-buttons:active{
+    color: rgb(152, 152, 242);
+}   

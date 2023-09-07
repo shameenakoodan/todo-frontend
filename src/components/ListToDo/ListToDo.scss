@@ -7,8 +7,12 @@
     font-size:  18px;
     text-align: left;
     width: 39vw;
-    height: 5vh;
+    height: 7vh;
     background-color:white;
+    border-bottom: 1px solid lightgray;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; 
+    border-radius: 10px;
 }
 .list-container{
     margin: 0 auto;
@@ -77,19 +81,19 @@ input[type=checkbox]:checked {
   cursor: pointer;
   border-radius: 25px;
   margin: 4px;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
 }
 
 /* Style the image inside the button */
 .custom-button img{
-  width: 28px;
+  width: 11px;
 }
 .custom-button.active {
   background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 .custom-button.inactive {
-  border: 2px solid gray;
+  border: 1px solid lightslategrey;
 }
 .custom-button.inactive:hover {
   border-color: hsl(192, 100%, 50%); /* Change the border color to your desired color */

@@ -9,7 +9,7 @@ import "./ListToDo.scss";
               onChange={() => handleCheckboxChange(index, todo.id)}
             />
 */
-const ListToDo = ({ todoList, handleCheckboxChange, handleDelete }) => {
+const ListToDo = ({ todoList, handleCheckboxChange, handleDelete, displayActive }) => {
   return (
     <>
       <div className="list-container">
@@ -29,7 +29,6 @@ const ListToDo = ({ todoList, handleCheckboxChange, handleDelete }) => {
             />
           </div>
         ))}
-        <Footer className="check-box" />
       </div>
 
     </>

@@ -3,6 +3,7 @@ import ListToDo from "../../components/ListToDo/ListToDo";
 import { useState, useEffect } from "react";
 
 import "./MainContainer.scss";
+import Footer from "../../components/Footer/Footer";
 const MainContainer = () => {
   const [inputValue, setInputValue] = useState('');
   const [todoList, setInputList] = useState([]);
@@ -75,12 +76,54 @@ const MainContainer = () => {
   useEffect(() => {
     fetchTodos();
   }, []);
+
+  //Display all active todos
+  const displayActive = ()=>{
+    fetch("http://localhost:8080/todos")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const filteredData = data.filter(item => item.isActive == "0");
+      console.log(filteredData +"filtered");
+      setInputList(filteredData);
+    });
+  }
+  //Display all active todos
+  const displayCompleted = ()=>{
+    fetch("http://localhost:8080/todos")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const filteredData = data.filter(item => item.isActive == "1");
+      console.log(filteredData +"filtered");
+      setInputList(filteredData);
+    });
+  }
+  const clearCompleted = ()=>{
+    fetch("http://localhost:8080/todos")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const filteredData = data.filter(item => item.isActive == "1");
+      filteredData.forEach(item => {
+        console.log("awejqkw");
+        handleDelete(item.id);
+      });
+      displayActive();
+      //setInputList(filteredData);
+    });
+  }
   return (
     <div className="main">
       <div className="heading">
         TO DO
         <InputToDo setInputValue={setInputValue} inputValue={inputValue} handleChange={handleChange}/>
         <ListToDo todoList={todoList} handleCheckboxChange={handleCheckboxChange} handleDelete={handleDelete}/>
+        <Footer className="check-box" displayActive={displayActive} fetchTodos={fetchTodos} displayCompleted={displayCompleted} clearCompleted={clearCompleted}/>
+
       </div>
 
     </div>
