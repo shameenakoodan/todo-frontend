@@ -122,7 +122,7 @@ const MainContainer = () => {
         TO DO
         <InputToDo setInputValue={setInputValue} inputValue={inputValue} handleChange={handleChange}/>
         <ListToDo todoList={todoList} handleCheckboxChange={handleCheckboxChange} handleDelete={handleDelete}/>
-        <Footer className="check-box" displayActive={displayActive} fetchTodos={fetchTodos} displayCompleted={displayCompleted} clearCompleted={clearCompleted}/>
+        <Footer className="check-box" displayActive={displayActive} fetchTodos={fetchTodos} displayCompleted={displayCompleted} clearCompleted={clearCompleted} sizelist = {todoList.length}/>
 
       </div>
 
